@@ -58,6 +58,7 @@ const AddSubjectPage = () => {
                   onChange={handleChange}
                   min="0"
                   max="100"
+                  
                 />
               </div>
               <button type="submit" className="btn btn-success w-100">Add Subject</button>
