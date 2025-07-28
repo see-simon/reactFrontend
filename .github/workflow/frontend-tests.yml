@@ -24,13 +24,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd frontend
+          cd ./
           npm ci
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-        working-directory:  frontend
+        working-directory:  ./
 
       - name: Run Playwright tests
         run: npx playwright test
-        working-directory: frontend
+        working-directory: ./
