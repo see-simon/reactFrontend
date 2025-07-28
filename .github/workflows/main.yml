@@ -21,15 +21,16 @@ jobs:
         with:
           node-version: 20
 
+
       - name: Install dependencies
         run: |
-          cd frontend
-          npm i --force
+          cd reac frontend
+          npm ci
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-        working-directory: frontend
+        working-directory: reac frontend
 
       - name: Run Playwright tests
         run: npx playwright test
-        working-directory: frontend
+        working-directory: reac frontend
