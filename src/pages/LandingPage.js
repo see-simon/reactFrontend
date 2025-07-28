@@ -9,10 +9,8 @@ const LandingPage = () => {
           <h1 className="display-4 fw-bold">Welcome to MyApp</h1>
           <p className="lead">Build amazing apps with ease.</p>
           <Link to="/loginPage" className="btn btn-light btn-lg mt-3">Get Started</Link>
-
         </div>
       </section>
-
     </div>
   );
 };

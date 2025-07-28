@@ -53,7 +53,6 @@ const handleUpdateSubmit = (e) => {
         .catch(error => {
             const msg = error.response?.data?.message || "Failed to update subject.";
             setUpdateError(msg);
-            // Do NOT call setEditingStudent(null) here!
             console.error("Error updating subject:", error);
         });
 };
@@ -112,8 +111,7 @@ const handleUpdateSubmit = (e) => {
                                 name="subjectName"
                                 className="form-control"
                                 value={formData.subjectName}
-                                onChange={handleUpdateChange}
-                               
+                                onChange={handleUpdateChange}                              
                             />
                         </div>
                         <div className="mb-3">
@@ -124,7 +122,6 @@ const handleUpdateSubmit = (e) => {
                                 className="form-control"
                                 value={formData.mark}
                                 onChange={handleUpdateChange}
-                               
                             />
                         </div>
                         <button type="submit" className="btn btn-success mx-2">Save</button>

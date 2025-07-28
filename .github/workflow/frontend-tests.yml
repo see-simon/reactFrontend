@@ -23,13 +23,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd frontend
-          npm ci
+          cd react frontend
+          npm i --force
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-        working-directory: frontend
+        working-directory: react frontend
 
       - name: Run Playwright tests
         run: npx playwright test
-        working-directory: frontend
+        working-directory: react frontend

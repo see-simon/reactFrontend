@@ -37,7 +37,7 @@ const AddSubjectPage = () => {
               </div>
             )}
             <form onSubmit={handleSubmit}>
-              {/* ...existing fields... */}
+        
               <div className="mb-3">
                 <label className="form-label">Subject Name</label>
                 <input
@@ -58,6 +58,7 @@ const AddSubjectPage = () => {
                   onChange={handleChange}
                   min="0"
                   max="100"
+                  
                 />
               </div>
               <button type="submit" className="btn btn-success w-100">Add Subject</button>
