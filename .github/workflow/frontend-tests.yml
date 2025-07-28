@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd frontend
+
           npm i --force
 
       - name: Install Playwright Browsers
