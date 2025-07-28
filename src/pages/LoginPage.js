@@ -54,11 +54,8 @@ const LoginPage = () => {
               required
             />
           </div>
-
         <Link to="/home" type="submit" className="btn btn-primary w-100">Login</Link>
-          
         </form>
-
         <div className="mt-3 text-center">
           <Link to="/signup" className="text-decoration-none">Don't have an account? Sign Up</Link>
 
