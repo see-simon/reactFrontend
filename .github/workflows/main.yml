@@ -23,13 +23,13 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: ./reactFrontend
+        working-directory: ./
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
-        working-directory: ./reactFrontend
+        working-directory: ./
 
       - name: Run Playwright tests
         run: npx playwright test
-        working-directory: ./reactFrontend
+        working-directory: ./
 
