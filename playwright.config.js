@@ -5,7 +5,7 @@ export default defineConfig({
   timeout: 30 * 1000,         
   retries: 1,                  
   use: {
-    headless: false,            
+    headless: true,            
     baseURL: 'http://localhost:3000',  
     slowMo: 5000,   
     viewport: { width: 1280, height: 720 },

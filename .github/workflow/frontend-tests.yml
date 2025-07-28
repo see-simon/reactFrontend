@@ -30,9 +30,6 @@ jobs:
         working-directory: ./
 
       - name: Run Playwright tests
-        run: npx playwright test 
-        env:
-          PW_BROWSER_TYPE: chromium:headles
+        run: npx playwright test
         working-directory: ./
-
 
