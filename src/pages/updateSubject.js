@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const UpdateSubjectPage = () => {
-  const { id } = useParams(); // get subject ID from URL
+  const { id } = useParams(); 
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -35,7 +35,7 @@ const UpdateSubjectPage = () => {
     axios.put(`http://localhost:8081/api/auth/updateSubject/${id}`, formData)
       .then(() => {
         alert('Subject updated successfully!');
-        navigate('/'); // redirect to Home after update
+        navigate('/'); 
       })
       .catch(error => {
         console.error('Error updating subject:', error);

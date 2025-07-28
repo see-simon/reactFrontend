@@ -53,7 +53,6 @@ const handleUpdateSubmit = (e) => {
         .catch(error => {
             const msg = error.response?.data?.message || "Failed to update subject.";
             setUpdateError(msg);
-            // Do NOT call setEditingStudent(null) here!
             console.error("Error updating subject:", error);
         });
 };

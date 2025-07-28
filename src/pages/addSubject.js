@@ -37,7 +37,7 @@ const AddSubjectPage = () => {
               </div>
             )}
             <form onSubmit={handleSubmit}>
-              {/* ...existing fields... */}
+        
               <div className="mb-3">
                 <label className="form-label">Subject Name</label>
                 <input
