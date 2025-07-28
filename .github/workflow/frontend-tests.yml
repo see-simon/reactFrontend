@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd reac frontend
-          npm i --force
+          npm ci
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
