@@ -24,13 +24,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd Reac frontend
+          cd "reac frontend"
           npm ci
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-        working-directory: Reac frontend
+        working-directory: "reac frontend"
 
       - name: Run Playwright tests
         run: npx playwright test
-        working-directory: Reac frontend
+        working-directory: "reac frontend"
