@@ -1,36 +1,35 @@
-
 name: Playwright Tests
 
 on:
   push:
-    branches: [main] 
+    branches:
+      - main
   pull_request:
-    branches: [main] 
+    branches:
+      - main
 
 jobs:
   test:
-    timeout-minutes: 60
     runs-on: ubuntu-latest
-
+    timeout-minutes: 60
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-
+          node-version: '20'
 
       - name: Install dependencies
-        run: |
-          cd reactFrontend
-          npm ci
+        run: npm ci
+        working-directory: ./reactFrontend
 
-      - name: Install Playwright Browsers
+      - name: Install Playwright browsers
         run: npx playwright install --with-deps
-        working-directory: reactFrontend
+        working-directory: ./reactFrontend
 
       - name: Run Playwright tests
         run: npx playwright test
-        working-directory: reactFrontend
+        working-directory: ./reactFrontend
+
