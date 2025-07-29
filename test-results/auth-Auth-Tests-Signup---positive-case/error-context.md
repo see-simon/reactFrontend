@@ -8,10 +8,10 @@
 - text: Surname
 - textbox: ttttt
 - text: Email
-- textbox: ttttt@example.com
+- textbox: new1@example.com
 - text: Password
-- textbox: ttttt
+- textbox: "12345"
 - text: Confirm Password
-- textbox: ttttt
+- textbox: "12345"
 - button "Sign Up"
 ```

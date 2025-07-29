@@ -67,6 +67,7 @@ const Signup = () => {
                             className="form-control"
                             value={formData.email}
                             onChange={handleChange}
+                            
                         />
                     </div>
                     <div className="mb-3">
@@ -77,6 +78,7 @@ const Signup = () => {
                             className="form-control"
                             value={formData.password}
                             onChange={handleChange}
+
                         />
                     </div>
                     <div className="mb-3">
@@ -87,6 +89,7 @@ const Signup = () => {
                             className="form-control"
                             value={formData.confirmPassword}
                             onChange={handleChange}
+
                         />
                     </div>
                     <button type="submit" className="btn btn-primary w-100">Sign Up</button>
