@@ -14,7 +14,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   setMessage('');
   try {
-    const response = await axios.post('http://localhost:8081/api/auth/loginPage', {
+    const response = await axios.post('http://localhost:8081/api/auth/login', {
       email,
       password
     });

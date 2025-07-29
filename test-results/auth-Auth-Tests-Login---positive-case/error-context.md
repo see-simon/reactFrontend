@@ -2,7 +2,7 @@
 
 ```yaml
 - heading "Login" [level=2]
-- alert: Login failed
+- alert: Invalid email or password
 - text: Email address
 - textbox "Email address": test@example.com
 - text: Password

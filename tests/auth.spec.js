@@ -31,7 +31,7 @@ test.describe('Auth Tests', () => {
   });
 
   test('Login - positive case', async ({ page }) => {
-    await page.goto(`${baseURL}/loginPage`);
+    await page.goto(`${baseURL}/login`);
 await page.fill('input#email', 'test@example.com');
 await page.fill('input#password', '123456');
 await page.click('button[type="submit"]');
@@ -40,7 +40,7 @@ await expect(page.locator('text=Login successful')).toBeVisible({ timeout: 5000 
   });
 
   test('Login - negative case (wrong password)', async ({ page }) => {
-    await page.goto(`${baseURL}/loginPage`);
+    await page.goto(`${baseURL}/login`);
 
     await page.fill('input#email', 'new1@example.com');
     await page.fill('input#password', 'WrongPassword');
