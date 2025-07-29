@@ -1,25 +1,33 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setMessage('');
-    try {
-      const response = await axios.post('http://localhost:8081/api/auth/login', {
-        email,
-        password
-      });
-      setMessage(response.data.message);
-    } catch (error) {
-      setMessage(error.response?.data?.message || 'Login failed');
+const navigate = useNavigate();
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setMessage('');
+  try {
+    const response = await axios.post('http://localhost:8081/api/auth/loginPage', {
+      email,
+      password
+    });
+    setMessage(response.data.message);
+
+    if (response.data.message.includes('successful')) {
+      setTimeout(() => navigate('/home'), 1000);
     }
-  };
+  } catch (error) {
+    setMessage(error.response?.data?.message || 'Login failed');
+  }
+};
+
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
@@ -54,7 +62,7 @@ const LoginPage = () => {
               required
             />
           </div>
-        <Link to="/home" type="submit" className="btn btn-primary w-100">Login</Link>
+      <button type="submit" className="btn btn-primary w-100">Login</button>
         </form>
         <div className="mt-3 text-center">
           <Link to="/signup" className="text-decoration-none">Don't have an account? Sign Up</Link>

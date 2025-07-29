@@ -2,12 +2,12 @@
 
 ```yaml
 - heading "Login" [level=2]
+- alert: Login failed
 - text: Email address
-- textbox "Email address": testuser@example.com
+- textbox "Email address": new1@example.com
 - text: Password
 - textbox "Password": WrongPassword
-- link "Login":
-  - /url: /home
+- button "Login"
 - link "Don't have an account? Sign Up":
   - /url: /signup
 ```

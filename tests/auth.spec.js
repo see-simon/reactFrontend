@@ -9,9 +9,9 @@ test.describe('Auth Tests', () => {
 
     await page.fill('input[name="name"]', 'gggg');
     await page.fill('input[name="surname"]', 'ttttt');
-    await page.fill('input[name="email"]', 'ttttt@example.com');
-    await page.fill('input[name="password"]', 'ttttt');
-    await page.fill('input[name="confirmPassword"]', 'ttttt');
+    await page.fill('input[name="email"]', 'new1@example.com');
+    await page.fill('input[name="password"]', '12345');
+    await page.fill('input[name="confirmPassword"]', '12345');
     await page.click('button[type="submit"]');
 
     await expect(page.locator('text=User created successfully')).toBeVisible({ timeout: 5000 });
@@ -32,18 +32,17 @@ test.describe('Auth Tests', () => {
 
   test('Login - positive case', async ({ page }) => {
     await page.goto(`${baseURL}/loginPage`);
-
-    await page.fill('input#email', 'ttttt@example.com');
-    await page.fill('input#password', 'ttttt');
-    await page.click('button[type="submit"]');
-
-    await expect(page.locator('text=Login successful')).toBeVisible({ timeout: 5000 });
+await page.fill('input#email', 'test@example.com');
+await page.fill('input#password', '123456');
+await page.click('button[type="submit"]');
+await expect(page.locator('text=Login successful')).toBeVisible({ timeout: 5000 });
+    await expect(page).toHaveURL(`${baseURL}/home`);
   });
 
   test('Login - negative case (wrong password)', async ({ page }) => {
     await page.goto(`${baseURL}/loginPage`);
 
-    await page.fill('input#email', 'testuser@example.com');
+    await page.fill('input#email', 'new1@example.com');
     await page.fill('input#password', 'WrongPassword');
     await page.click('button[type="submit"]');
 
